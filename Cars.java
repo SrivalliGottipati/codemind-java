@@ -1,26 +1,9 @@
 import java.util.Scanner;
-public class Solution
-{
-    public static void main(String args[])
-    {
+public class Car{
+    public static void main(String[] args){
         Scanner sc=new Scanner(System.in);
-        int n1=sc.nextInt();
-        int n2=sc.nextInt();
-        int x=sc.nextInt();
-        if(n1>n2)
-        {
-            System.out.println("-1");
-        }
-        else
-        {
-            int c=1;
-            while(x+n1>=n2)
-            {
-                c+=1;
-                n1+=n1;
-                n2+=n2;
-            }
-            System.out.println(c);
-        }
+        int a=sc.nextInt();
+        float b=(float)a/4;
+        System.out.println((int)Math.ceil(b));
     }
 }
