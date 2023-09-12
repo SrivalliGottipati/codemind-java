@@ -1,15 +1,26 @@
 import java.util.Scanner;
-public class Oct{
+public class Binary{
     public static void main(String[] args){
         Scanner sc=new Scanner(System.in);
-        int a=sc.nextInt();
-        int i=0;
-        while(i<a){
-            String b=sc.next();
-            int c=Integer.parseInt(b,2);
-            String d=Integer.toString(c,8);
-            i+=1;
-            System.out.println(d);
+        int n=sc.nextInt();
+        for(int j=0;j<n;j++){
+            long binaryNumber=sc.nextLong();
+            int octalNumber = 0, decimalNumber = 0, i = 0;
+
+    while (binaryNumber != 0) {
+      decimalNumber += (binaryNumber % 10) * Math.pow(2, i);
+      ++i;
+      binaryNumber /= 10;
+    }
+
+    i = 1;
+
+    while (decimalNumber != 0) {
+      octalNumber += (decimalNumber % 8) * i;
+      decimalNumber /= 8;
+      i *= 10;
+    }
+            System.out.println(octalNumber);
         }
     }
 }
