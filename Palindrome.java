@@ -1,20 +1,30 @@
-import java.util.Scanner;
-public class Pal{
-    public static void main(String[] args){
+import java.util.*;
+public class Solution
+{
+    public static int ispal(int n)
+    {
+        int rev=0;
+        int temp=n;
+        while(n!=0)
+        {
+            rev=rev*10+n%10;
+            n=n/10;
+        }
+        if(temp==rev)
+        {
+            return 2;
+        }
+        return 1;
+        
+    }
+    public static void main(String args[])
+    {
         Scanner sc=new Scanner(System.in);
-        int a=sc.nextInt();
-        int original=a;
-        int reverse=0;
-        while(a!=0){
-           int remain=a%10;
-            a=a/10;
-            reverse= reverse*10+remain;
-        }
-        if(original==reverse){
-            System.out.println("Palindrome");
-        }
+        int n=sc.nextInt();
+        if(ispal(n)==2)
+        System.out.println("True");
         else{
-            System.out.println("Not Palindrome");
+            System.out.println("False");
         }
     }
 }
